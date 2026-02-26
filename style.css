@@ -13,40 +13,19 @@ body{
   background: radial-gradient(1200px 600px at 20% 0%, #1a2a6c33, transparent), var(--bg);
   color:var(--text);
 }
-
-.day-nav{
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(255,255,255,.9);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid #eee;
-  padding: 10px 12px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.map-tag{
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid #ddd;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:14px;
 }
+.map-tag:hover{ border-color:#999; }
 
-.day-link{
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid #ddd;
-  text-decoration: none;
-  color: inherit;
-  font-weight: 600;
-}
 
-.day-link.is-active{
-  background: #111;
-  color: #fff;
-  border-color: #111;
-}
 
-/* 避免 sticky 導覽列蓋住標題（點按跳轉時很常發生） */
-.day-section{
-  scroll-margin-top: 64px;
-}
+
 
 .hero{
   position:relative;
@@ -117,6 +96,25 @@ body{
   background: #0b1020aa;
 }
 .links a:hover{border-color: var(--accent)}
+
+
+.day-nav .link{
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #3b4a85;     /* 改成跟你其他按鈕一致的色系 */
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  background: #0b1020aa;         /* 給一點底色，hover 才看得出差 */
+  transition: transform .15s ease, border-color .15s ease, background-color .15s ease;
+}
+
+.day-nav .link:hover{
+  border-color: var(--accent);
+  background: #0b1020;
+  transform: translateY(-1px);
+}
 
 .optional{margin-top: 10px}
 .optional summary{cursor:pointer; color: var(--muted)}
